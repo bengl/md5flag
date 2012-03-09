@@ -1,0 +1,23 @@
+{
+  "author": "Bryan English <bryan@bryanenglish.com>",
+  "name": "md5flag",
+  "description": "Generates a \"free speech flag\" based on input.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bengl/md5flag",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bengl/md5flag.git"
+  },
+  "bin": { "md5flag": "./md5flag" },
+  "main": "md5flag.js",
+  "dependencies": {
+    "ansi":"0.0.4",
+    "cryptojs":"2.5.3",
+    "canvas":"0.10.3"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

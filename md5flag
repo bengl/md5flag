@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+var fs = require('fs'),
+    md5flag = require('./md5flag.js'),
+    input = process.argv[process.argv.length-1],
+    pngOpt = process.argv[process.argv.length-2],
+    toPng = pngOpt == '-p' || pngOpt == '--png';
+
+fs.readFile(input,function(err,data){
+  var string = err ? input : data;
+  console.log(md5flag.hash(string));
+  md5flag.term(process.stdout,string);
+  if (toPng) md5flag.png(string,800,450,process.cwd());
+});
