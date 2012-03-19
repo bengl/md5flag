@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// vim: ft=javascript
+
 var fs = require('fs'),
     md5flag = require('./md5flag.js'),
     input = process.argv[process.argv.length-1],
