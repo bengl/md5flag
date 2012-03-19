@@ -5,16 +5,9 @@ var Crypto = require('cryptojs').Crypto,
     fs = require('fs');
     cursor = ansi(process.stdout);
 
-function invert(color){
-  var chunks = color.match(/.{1,2}/g),
-      flip = function(byt){
-        return (0xFF-parseInt(byt,16)).toString(16);
-      };
-  return [
-    flip(chunks[0]),
-    flip(chunks[1]),
-    flip(chunks[2])
-  ].join("");
+function contrasting(color){
+  return parseInt('0x'+color)*2 > 0xffffff ? "#000000" : "#ffffff";
+
 }
 
 var hash = function(string){
@@ -39,7 +32,7 @@ module.exports.term = function(stream,string){
   for (var k = 0; k < 4; k++)
     cursor.bg.hex(colors[k]).write(space);
   cursor.bg.hex(colors[4])
-        .fg.hex(invert(colors[4]))
+        .fg.hex(contrasting(colors[4]))
         .write(" +"+colors[5].toUpperCase())
         .reset().write('\n');
 };
