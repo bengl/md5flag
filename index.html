@@ -7,7 +7,8 @@
   </head>
   <body>
     <h1>MD5 Flag</h1>
-    <p>This is "free speech flag" generator for arbitrary MD5 hashes of text. The input is any text you like, and the output is a png in the style of the <a href="http://www.badmouth.net/free-speech-flag/">free speech flag</a> based on the MD5 hash of the input text.
+    <p>This is "free speech flag" generator for arbitrary MD5 hashes of text. The input is any text you like, and the output is a png in the style of the <a href="http://www.badmouth.net/free-speech-flag/">free speech flag</a> based on the MD5 hash of the input text.</p>
+    <p>There is also a command-line version of this, built in <a href="http://nodejs.org">Node.js</a> that you can install by doing <code>npm install -g md5flag</code>. See the <a href="https://github.com/bengl/md5flag">readme</a> for details.</p>
     <div>
       <textarea rows="20" cols="80" id="input">Paste some text here to get the md5 flag of the text.</textarea>
     </div>
@@ -45,11 +46,13 @@ var canvas = $('md5flag'),
   var img = document.createElement('img');
   img.setAttribute('src',canvas.toDataURL('image/png'));
   img.setAttribute('id','pngflag');
+  img.setAttribute('height','180');
+  img.setAttribute('width','320');
   document.body.appendChild(img);
 };
 
     </script>
 
-    <a href="http://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+    <a href="http://github.com/bengl/md5flag"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
   </body>
 </html>
