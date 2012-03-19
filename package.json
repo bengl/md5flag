@@ -9,7 +9,7 @@
     "url": "git://github.com/bengl/md5flag.git"
   },
   "bin": { "md5flag": "./md5flag" },
-  "main": "md5flag.js",
+  "main": "md5flag",
   "dependencies": {
     "ansi":"0.0.4",
     "cryptojs":"2.5.3",
