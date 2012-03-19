@@ -7,7 +7,6 @@ var Crypto = require('cryptojs').Crypto,
 
 function contrasting(color){
   return parseInt('0x'+color)*2 > 0xffffff ? "#000000" : "#ffffff";
-
 }
 
 var hash = function(string){
@@ -48,7 +47,7 @@ module.exports.png = function(string, totalWidth, totalHeight, outputDir){
   }
   ctx.font = '60px "Courier New"';
   ctx.lineWidth = 1;
-  ctx.fillStyle = '#'+invert(colors[4]);
+  ctx.fillStyle = contrasting(colors[4]);
   ctx.fillText('+'+colors[5].toUpperCase(), totalWidth - 110, totalHeight - 10);
   var out = fs.createWriteStream(outputDir + '/' + colors.join('') + '.png'),
       stream = canvas.createPNGStream();
